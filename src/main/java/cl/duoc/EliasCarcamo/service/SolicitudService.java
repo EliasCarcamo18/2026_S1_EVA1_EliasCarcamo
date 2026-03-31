@@ -51,14 +51,14 @@ public class SolicitudService {
     //Ordenar solicitudes por fechaRegistro ascendente
     public List<Solicitud> ordenarPorFechaRegistro() {
         return solicitudRepository.findAll().stream()
-                .sorted(Comparator.comparing(Solicitud::getFechaRegistro))
-                .collect(Collectors.toList());
+            .sorted(Comparator.comparing(Solicitud::getFechaRegistro))
+            .collect(Collectors.toList());
     }
 
     // Busqueda por especialidad
     public List<Solicitud> buscarPorEspecialidad(String especialidad) {
         return solicitudRepository.findAll().stream()
-                .filter(s -> s.getEspecialidad().equalsIgnoreCase(especialidad))
-                .collect(Collectors.toList());
+            .filter(s -> s.getEspecialidad().equalsIgnoreCase(especialidad))
+            .collect(Collectors.toList());
     }
 }
